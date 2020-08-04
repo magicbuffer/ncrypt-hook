@@ -65,7 +65,8 @@
       <IntrinsicFunctions>
       </IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;NCRYPT_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>false</SDLCheck>
+      <SDLCheck>
+      </SDLCheck>
       <ExceptionHandling>false</ExceptionHandling>
       <BasicRuntimeChecks />
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -74,13 +75,14 @@
       <CompileAs>CompileAsC</CompileAs>
       <AdditionalOptions>/Oi- %(AdditionalOptions)</AdditionalOptions>
       <WholeProgramOptimization>false</WholeProgramOptimization>
+      <OmitFramePointers />
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>false</OptimizeReferences>
-      <ModuleDefinitionFile>ncrypt.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
       <LinkTimeCodeGeneration>
       </LinkTimeCodeGeneration>
