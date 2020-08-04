@@ -9,8 +9,8 @@
 #include "../include/runtime.h"
 #include "exports.h"
 
-#define MAGIC_NCRYPT_KEY     ((DWORD)0x73736c35)
-#define MAGIC_NCRYPT_SSL_KEY ((DWORD)0x44444442)
+#define MAGIC_NCRYPT_KEY     ((DWORD)0x44444442)
+#define MAGIC_NCRYPT_SSL_KEY ((DWORD)0x73736c35)
 
 #define STR_SEPARATOR " "
 #define STR_SEPARATOR_SIZE ((DWORD)1)
@@ -198,12 +198,10 @@ VOID dump_master_key(NCRYPT_KEY_HANDLE key, PNCryptBufferDesc buffers)
 
 	// Get the client random buffer
 	PBCryptBuffer client_random = get_client_random(buffers);
-	/*
 	if (client_random == NULL)
 	{
 		return;
 	}
-	*/
 
 	// Get the heap
 	HANDLE heap = GetProcessHeap();
@@ -365,6 +363,6 @@ extern SECURITY_STATUS WINAPI SslExpandTrafficKeys_hook(
 		if (client_random_str != NULL)
 			HeapFree(heap, 0, (LPVOID)client_random_str);
 	}
-
+	
 	return p_f_SslExpandTrafficKeys(hSslProvider, a2, a3, a4, a5, a6, dwFlags);
 }
